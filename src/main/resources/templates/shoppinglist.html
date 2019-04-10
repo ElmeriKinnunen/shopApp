@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+	
+<head>	
+	<meta charset="ISO-8859-1" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/listStyle.css" th:href="@{/css/listStyle.css}" />
+	<title>ShopApp</title>
+</head>
+<body>
+	<div class="page">
+		<form th:action="@{/logout}" method="post" class="btnLogout">
+			<input type="submit" value="Log out" class="btn btn-sm btn-danger" />
+		</form>
+	
+		<div class="section">
+		<h1>Käyttäjän [[${#httpServletRequest.remoteUser}]] kauppalista</h1>
+			<div class="table1">
+				<table class="table table-stripped" id="myTable">
+					<tr>
+						<th>Tuote</th>
+						<th>Määrä</th>
+						<th>Osasto</th>
+						<th>Muokkaa</th>
+						<th>Poista</th>
+					</tr>
+					<tr th:each= "product : ${products}">
+						<td th:text="${product.name}"></td>
+						<td th:text="${product.qty}"></td>
+						<td th:text="${product.department.name}"></td>
+						<td><a th:href="@{/edit/{id}(id=${product.id})}" class="edit" method="get"><ion-icon class="ed" name="create"></ion-icon></a></td>
+						<td><a th:href="@{/delete/{id}(id=${product.id})}" class="delete" method="get"><ion-icon class="del" name="close"></ion-icon></a></td>
+					</tr>
+				</table>
+			</div> <!-- div table1 ends -->
+			
+			<div class="btnAdd">
+				<a th:href="@{/add}" class="btn btn-success" id="Abtn">Lisää tuote</a>
+			</div>
+		</div> <!--  section ends-->
+	</div><!-- div page ends -->
+</body>
+</html>

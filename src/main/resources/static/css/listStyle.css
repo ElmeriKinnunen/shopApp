@@ -1,0 +1,89 @@
+body{
+	background-image:url("http://papers.co/wallpaper/papers.co-si28-aurora-blur-rainbow-color-gradation-blur-36-3840x2400-4k-wallpaper.jpg");
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: inherit;
+}
+.page{
+	position: relative;
+}
+
+.btnLogout{
+	position: absolute;
+	padding: 20px;
+	right: 0;
+	top: 0;
+}
+
+h1{
+	color: white;
+}
+
+#myTable{
+	color: white;
+	ustify-content: center;
+	text-align: center;
+	margin: auto;
+	border: 1px solid white;	
+}
+
+td{
+	margin: auto;
+	text-align: center;
+	font-size: 18px;
+}
+
+.edit ion-icon {
+ 	 font-size: 30px;
+ 	 color: #f0ad4e;
+}
+
+.edit ion-icon:hover{
+ 	 color: white;
+}
+
+.delete ion-icon{
+	font-size: 30px;
+	color: #D9534F;
+}
+
+.delete ion-icon:hover{
+	font-size: 30px;
+	color:white;
+}
+
+.table1{
+	padding-top: 100px;
+	ustify-content: center;
+	text-align: center;
+}
+
+.section{
+	display: flex;
+	flex-direction: column;
+	width: 800px;
+	margin: auto;
+	position: relative;
+}
+
+
+#Abtn{
+	width: 130px;
+	position:absolute;
+	right: 0;
+	bottom: -60px;
+	background-color: #f0ad4e;
+	border: none;
+	font-size: 20px;
+}
+
+.delete{
+
+}
+
+.btnAdd a{
+	color: white;
+}
+.btnAdd a:hover{
+	color: #F9DEB8;
+}

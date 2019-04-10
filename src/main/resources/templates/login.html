@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<head>
+	<meta charset="ISO-8859-1" content="text/html; charset=UTF-8" />
+	<title>ShopApp</title>
+	<link type="text/css" rel="stylesheet" href="/css/loginStyle.css" th:href="@{css/loginStyle.css}" />
+</head>
+<body>
+	<div class="loginWindow">
+		<div class="row">
+        	<div class="col-md-6 col-md-offset-3">
+            <h3>ShopApp</h3>
+
+			<div th:if="${param.logout}">
+				Kirjauduit ulos onnistuneesti.
+			</div>
+	
+			<form th:action="@{/login}" method="post">
+				<p th:if="${param.error}">Virheellinen käyttäjätunnus tai salasana.</p>
+				
+				<div class="form-group">
+					<input type="text" name="username" id="username" class="form-control" placeholder="Käyttäjänimi" />
+		        </div>
+		        
+		        <div class="form-group">
+	                <input type="password" name="password" id="password" class="form-control" placeholder="Salasana" />
+	            </div>
+	            
+	 			<button type="submit" class="btn btn-primary">Kirjaudu sisään</button>
+		        <div class="Register">
+		        	Uusi käyttäjätunnus? <a th:href="@{/signup}">Luo uusi käyttäjä</a>
+		        </div>
+			</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

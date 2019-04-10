@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<head>
+	<meta charset="ISO-8859-1" content="text/html; charset=UTF-8" />
+	<title>ShopApp</title>
+	<link type="text/css" rel="stylesheet" href="/css/addStyle.css" th:href="@{css/addStyle.css}" />
+</head>
+<body>
+	<div class="addWindow">
+		<div class="row">
+        	<div class="col-md-6 col-md-offset-3">
+			<h3>Lisää tuote</h3>
+				<form th:object="${product}" th:action="@{save}" action="#" method="post">
+					<label for="name">Tuote</label>
+					<input type="text" id="name" th:field="*{name}" class="form-control"/>
+					
+					<label for="qty">Määrä</label>
+					<input type="text" id="qty" th:field="*{qty}" class="form-control"/>
+					
+					<label for="department">Osasto</label>
+					<select class="form-control" id="department" th:field="*{department}" >
+						<option th:each="department : ${departments}" th:value="${department.departmentId}" th:text="${department.name}"></option>
+					</select>
+					<div class="save">
+						<button type="submit" class="btn btn-primary">Tallenna</button>
+					</div>
+					<div class="cancel">
+					<a href="#" th:href="@{/shoppinglist}" role="button">Peruuta</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

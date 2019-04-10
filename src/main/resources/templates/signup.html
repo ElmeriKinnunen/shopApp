@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+ 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+    <title>ShopApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/signupStyle.css" th:href="@{css/signupStyle.css}" />
+</head>
+<body>
+	<div class="signupWindow">
+		<div class="row">
+        	<div class="col-md-6 col-md-offset-3">
+        	
+            <h3>Uusi käyttäjä</h3>
+            
+				<form th:object="${signupform}" th:action="@{/saveuser}" action="#" method="post">
+					<div class="form-group">
+						<input type="text" th:field="*{username}" class="form-control" placeholder="Käyttäjätunnus" />
+						<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>	
+					</div>
+					<div class="form-group">
+						<input type="email" th:field="*{email}" class="form-control" placeholder="sähköposti" />
+						<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>	
+					</div>
+					<div class="form-group">
+						<input type="password" th:field="*{password}" class="form-control" placeholder="Salasana" />
+						<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>	
+					</div>
+					<div class="form-group">
+						<input type="password" th:field="*{passwordCheck}" class="form-control" placeholder="Vahvista salasana" />
+						<p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">Password Match Error</p>	
+					</div>
+					
+					<button type="submit" class="btn btn-primary">Sign up</button>	
+					<div class="cancel">
+			        	<a th:href="@{/login}">Cancel</a>
+			        </div>	
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

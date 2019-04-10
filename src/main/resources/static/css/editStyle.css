@@ -1,0 +1,61 @@
+body{
+	background-image:url("http://papers.co/wallpaper/papers.co-si28-aurora-blur-rainbow-color-gradation-blur-36-3840x2400-4k-wallpaper.jpg");
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: inherit;
+}
+
+label{
+	margin-top: 10px;
+}
+
+.editWindow{
+	background-color: white;
+	width: 380px;
+	height: 500px;
+	padding-bottom: 10px;
+	padding-top: 35px;
+	margin: auto;
+	margin-top: 300px;;
+	position: relative;
+}
+
+.row{
+	justify-content: center;
+}
+
+.row h3{
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+col-md-6{
+	text-align: center;
+	justify-content: center;
+}
+
+.btn {
+  background: #f0ad4e none repeat scroll 0 0;
+  border-color: #f0ad4e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.btn-primary {
+	font-size: 20px;
+	text-align: center;
+}
+
+.cancel a{
+	color: dark-blue;
+}
+.cancel a:hover{
+	color: #f0ad4e;
+	text-decoration: none;
+}
+
